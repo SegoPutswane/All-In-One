@@ -4,7 +4,17 @@ def get_date_of_birth(id_number: str) -> str:
     STEP 2: Extract the date of birth from the ID number and return it as a string
     return format: DD/MM/YY:
     """
-    pass
+    #separating the date of birth from the ID number and converting it into a string
+    dob = str(id_number)[0:6]
+    #assign an empty string where the date of birth will be stored after generating
+    result = ""
+
+    #looping through the extracted date of birth to check where to place the forward slashes
+    for i in range(len(dob)):
+        result += dob[i]
+        if (i + 1) % 2== 0 and i < len(dob) - 1:
+            result += "/"
+    return result
 
 # Question 2
 def get_gender(id_number: str) -> str:
