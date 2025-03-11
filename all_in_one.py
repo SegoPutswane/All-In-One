@@ -50,8 +50,7 @@ def fizzbuzz(n):
             print("Buzz")
         else:
             print(i)
-    
-fizzbuzz(15)
+
 
 # Question 4
 def find_even_numbers(numbers):
@@ -59,7 +58,14 @@ def find_even_numbers(numbers):
     in a tuple
 
     Hint: use modulus (%)"""
-    pass
+    even_num = []
+    for number in numbers:
+        if number % 2 == 0:
+            even_num.append(number)
+    even_num = tuple(even_num)
+    return even_num
+        
+print(find_even_numbers([1,3,6,8,9,4,5,6,767,6,8,99]))
 
 # Question 5
 def find_odd_numbers(numbers):
@@ -67,7 +73,15 @@ def find_odd_numbers(numbers):
     in a tuple
 
     Hint: use modulus (%)"""
-    pass
+    odd_num = []
+    for number in numbers:
+        if number % 2 != 0:
+            odd_num.append(number)
+    odd_num = tuple(odd_num)
+    return odd_num
+
+print(find_odd_numbers([1,3,6,8,9,4,5,6,767,6,8,99]))
+
 
 # Question 6
 def return_list_stats(numbers):
