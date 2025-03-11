@@ -64,8 +64,7 @@ def find_even_numbers(numbers):
             even_num.append(number)
     even_num = tuple(even_num)
     return even_num
-        
-print(find_even_numbers([1,3,6,8,9,4,5,6,767,6,8,99]))
+
 
 # Question 5
 def find_odd_numbers(numbers):
@@ -79,9 +78,6 @@ def find_odd_numbers(numbers):
             odd_num.append(number)
     odd_num = tuple(odd_num)
     return odd_num
-
-print(find_odd_numbers([1,3,6,8,9,4,5,6,767,6,8,99]))
-
 
 # Question 6
 def return_list_stats(numbers):
@@ -101,7 +97,52 @@ def return_list_stats(numbers):
         number_of_odd_numbers : the total number of even numbers in the list
              'numbers'
     """
-    pass
+    #getting the unique numbers in the list
+    unique_numbers = set(numbers)
+
+    #minimum number
+    minimum_num = min(numbers)
+
+    #maximum number
+    maximum_num = max(numbers)
+
+    #average of the list
+    ave_number = sum(numbers)/len(numbers)
+
+    #even numbers in the list
+    even_num = []
+    for number in numbers:
+        if number % 2 == 0:
+            even_num.append(number)
+
+    #odd numbers in the list
+    odd_num = []
+    for number in numbers:
+        if number % 2 != 0:
+            odd_num.append(number)
+
+    #number of even numbers
+    even_count = 0
+    for number in numbers:
+        if number % 2 != 0:
+            even_count += 1
+
+    #number of odd numbers
+    odd_count = 0
+    for number in numbers:
+        if number % 2 != 0:
+            odd_count += 1
+
+    return {"unique_numbers" : unique_numbers,
+            "min": minimum_num,
+            "max": maximum_num,
+            "average": ave_number,
+            "even_numbers": even_num,
+            "odd_numbers": odd_num,
+            "number_of_even_numbers": even_count,
+            "number_of_odd_numbers": odd_count,}
+
+
 
 # Question 7
 def draw_triangle_reversed(height: int) -> None:
@@ -116,7 +157,9 @@ def draw_triangle_reversed(height: int) -> None:
         None: Prints the inverted triangle pattern directly to console.
 
     """
-    pass
+    n = 5
+    for i in range(n,0,-1):
+        print(""*(n-i)+"*"*i)
 
 # Question 8
 def draw_triangle_prime(height: int) -> None:
