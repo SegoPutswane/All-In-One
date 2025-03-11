@@ -25,11 +25,15 @@ def get_gender(id_number: str) -> str:
     Formula: 1 if the ID number's 7th to 10th digit is less than 5000, the person is
     female and if it is greater than 4999, the person is male.
     """
-    pass
+    gender_digits = str(id_number)[6:10]
+
+    if int(gender_digits) < 5000:
+        return "Female"
+    return "Male"
 
 # Question 3
-    """
-    Fizzbuzz is a programme that prints the numbers from 1 to n, 
+def fizzbuzz(n):
+    """Fizzbuzz is a programme that prints the numbers from 1 to n, 
     but for multiples of 3, it prints "Fizz" instead of the number, 
     and for multiples of 5, it prints "Buzz" instead of the number. 
     For numbers that are multiples of both 3 and 5, it prints "FizzBuzz.
